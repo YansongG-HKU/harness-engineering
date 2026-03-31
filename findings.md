@@ -43,6 +43,14 @@
 - Task 1 verified that the root bootstrap can be driven cleanly with Python `unittest` checks before any production scaffold files are added.
 - Because the approved spec and architecture docs were created before `git init`, immediate migration into a separate git worktree is deferred until those source-of-truth files are committed.
 - Empty scaffold directories need placeholder files such as `.gitkeep`; otherwise a clean Git checkout would drop them and invalidate repository-shape tests.
+- The first canonical documentation layer is now implemented and anchored by explicit marker tests for concepts, workflows, tool contracts, prompt assets, evals, policy, examples, and vendor reference indexes.
+- The repository now has a first complete blueprint layer, giving each core harness object a minimal reusable template that skills and examples can point at.
+- The umbrella skill is now established as a routing layer back to canonical docs and focused module skills, preserving the rule that skills are entry points rather than the source of truth.
+- The dual-distribution shape is now real: users can install the umbrella skill or go directly to focused module skills without losing the canonical-doc routing model.
+- The minimal example track now demonstrates the smallest end-to-end harness loop and anchors every example artifact back to its blueprint template.
+- The productized example track now shows how the same object model scales into a more realistic repository review loop without abandoning blueprint traceability.
+- The repository now has a mechanical contract checker, so the most important public structure can be validated without reading the whole tree manually.
+- The full v1 bootstrap plan has been implemented on `codex/bootstrap-root` with repository-native Python `unittest` coverage and a standard-library contract checker.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -65,6 +73,14 @@
 | Start implementation on a feature branch immediately after `git init` | Avoids doing feature work directly on `main` while the repository is still being bootstrapped |
 | Defer git worktree creation until committed source-of-truth files exist | A fresh worktree can only check out committed files, and the approved design docs still need to enter repository history |
 | Preserve intentionally empty scaffold directories with `.gitkeep` files | Git does not track empty directories, but the repository contract and tests require them to exist |
+| Keep canonical docs intentionally concise in v1 | The repository is teaching-first, so each document should establish stable concepts without overloading the initial layer |
+| Keep blueprint templates skeletal but explicit | v1 should teach object boundaries and required fields without prematurely encoding heavyweight process |
+| Make the umbrella skill a router, not a duplicate spec | This keeps repository meaning centralized in docs and templates while still supporting `skill-installer` entry points |
+| Keep module skills narrowly scoped around one harness object each | This supports composable installation and clearer user routing for `skill-installer` consumers |
+| Make the minimal example concrete but tiny | The first example should teach traceability across objects without introducing product-level complexity too early |
+| Use the productized example to teach repository layering, not runtime sophistication | The goal is to show durable structure, review loops, and legibility rather than a larger feature set |
+| Backstop the public blueprint with a simple standard-library checker | v1 needs a cheap mechanical verification layer that anyone can run without extra dependencies |
+| Keep the first shipped branch local for now | The user asked to continue implementation step by step in the current folder rather than switching into a later integration flow mid-build |
 
 ## Issues Encountered
 | Issue | Resolution |
