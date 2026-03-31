@@ -50,6 +50,7 @@
 - The minimal example track now demonstrates the smallest end-to-end harness loop and anchors every example artifact back to its blueprint template.
 - The productized example track now shows how the same object model scales into a more realistic repository review loop without abandoning blueprint traceability.
 - The repository now has a mechanical contract checker, so the most important public structure can be validated without reading the whole tree manually.
+- The full v1 bootstrap plan has been implemented on `codex/bootstrap-root` with repository-native Python `unittest` coverage and a standard-library contract checker.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -79,6 +80,7 @@
 | Make the minimal example concrete but tiny | The first example should teach traceability across objects without introducing product-level complexity too early |
 | Use the productized example to teach repository layering, not runtime sophistication | The goal is to show durable structure, review loops, and legibility rather than a larger feature set |
 | Backstop the public blueprint with a simple standard-library checker | v1 needs a cheap mechanical verification layer that anyone can run without extra dependencies |
+| Keep the first shipped branch local for now | The user asked to continue implementation step by step in the current folder rather than switching into a later integration flow mid-build |
 
 ## Issues Encountered
 | Issue | Resolution |
