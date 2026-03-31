@@ -49,6 +49,7 @@
 - The dual-distribution shape is now real: users can install the umbrella skill or go directly to focused module skills without losing the canonical-doc routing model.
 - The minimal example track now demonstrates the smallest end-to-end harness loop and anchors every example artifact back to its blueprint template.
 - The productized example track now shows how the same object model scales into a more realistic repository review loop without abandoning blueprint traceability.
+- The repository now has a mechanical contract checker, so the most important public structure can be validated without reading the whole tree manually.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -77,6 +78,7 @@
 | Keep module skills narrowly scoped around one harness object each | This supports composable installation and clearer user routing for `skill-installer` consumers |
 | Make the minimal example concrete but tiny | The first example should teach traceability across objects without introducing product-level complexity too early |
 | Use the productized example to teach repository layering, not runtime sophistication | The goal is to show durable structure, review loops, and legibility rather than a larger feature set |
+| Backstop the public blueprint with a simple standard-library checker | v1 needs a cheap mechanical verification layer that anyone can run without extra dependencies |
 
 ## Issues Encountered
 | Issue | Resolution |

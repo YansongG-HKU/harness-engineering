@@ -128,6 +128,11 @@
   - Added the productized example README plus repository shape, workflow, tool contract, eval, trace review, and policy files
   - Tightened the productized workflow wording so the required `review checkpoints` marker remains contiguous text
   - Re-ran the productized example test and then ran the full suite for regression coverage
+  - Committed the productized example track
+  - Wrote `tests/test_repository_checks.py` before adding the repository contract checker
+  - Ran the repository checker test and observed the expected red state for the missing script
+  - Added `scripts/check_repository.py` to validate required repository paths mechanically
+  - Re-ran the repository checker test and then ran the full suite for regression coverage
 - Files created/modified:
   - `.gitignore` (created)
   - `.editorconfig` (created)
@@ -178,6 +183,8 @@
   - `examples/productized/eval.md` (created)
   - `examples/productized/trace-review.md` (created)
   - `examples/productized/policy.md` (created)
+  - `tests/test_repository_checks.py` (created)
+  - `scripts/check_repository.py` (created)
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -208,6 +215,9 @@
 | Productized example red test | `python -m unittest discover -s tests -p "test_productized_example.py" -v` before implementation | FAIL because productized example files are missing | 7 failures, 0 passes | PASS |
 | Productized example green test | `python -m unittest discover -s tests -p "test_productized_example.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
 | Regression suite after Task 7 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 10 tests passed | PASS |
+| Repository checker red test | `python -m unittest discover -s tests -p "test_repository_checks.py" -v` before implementation | FAIL because the repository checker script is missing | 1 failure, 0 passes | PASS |
+| Repository checker green test | `python -m unittest discover -s tests -p "test_repository_checks.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
+| Regression suite after Task 8 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 11 tests passed | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
