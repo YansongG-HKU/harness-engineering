@@ -44,6 +44,7 @@
 - Because the approved spec and architecture docs were created before `git init`, immediate migration into a separate git worktree is deferred until those source-of-truth files are committed.
 - Empty scaffold directories need placeholder files such as `.gitkeep`; otherwise a clean Git checkout would drop them and invalidate repository-shape tests.
 - The first canonical documentation layer is now implemented and anchored by explicit marker tests for concepts, workflows, tool contracts, prompt assets, evals, policy, examples, and vendor reference indexes.
+- The repository now has a first complete blueprint layer, giving each core harness object a minimal reusable template that skills and examples can point at.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -67,6 +68,7 @@
 | Defer git worktree creation until committed source-of-truth files exist | A fresh worktree can only check out committed files, and the approved design docs still need to enter repository history |
 | Preserve intentionally empty scaffold directories with `.gitkeep` files | Git does not track empty directories, but the repository contract and tests require them to exist |
 | Keep canonical docs intentionally concise in v1 | The repository is teaching-first, so each document should establish stable concepts without overloading the initial layer |
+| Keep blueprint templates skeletal but explicit | v1 should teach object boundaries and required fields without prematurely encoding heavyweight process |
 
 ## Issues Encountered
 | Issue | Resolution |
