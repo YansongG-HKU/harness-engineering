@@ -48,6 +48,7 @@
 - The umbrella skill is now established as a routing layer back to canonical docs and focused module skills, preserving the rule that skills are entry points rather than the source of truth.
 - The dual-distribution shape is now real: users can install the umbrella skill or go directly to focused module skills without losing the canonical-doc routing model.
 - The minimal example track now demonstrates the smallest end-to-end harness loop and anchors every example artifact back to its blueprint template.
+- The productized example track now shows how the same object model scales into a more realistic repository review loop without abandoning blueprint traceability.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -75,6 +76,7 @@
 | Make the umbrella skill a router, not a duplicate spec | This keeps repository meaning centralized in docs and templates while still supporting `skill-installer` entry points |
 | Keep module skills narrowly scoped around one harness object each | This supports composable installation and clearer user routing for `skill-installer` consumers |
 | Make the minimal example concrete but tiny | The first example should teach traceability across objects without introducing product-level complexity too early |
+| Use the productized example to teach repository layering, not runtime sophistication | The goal is to show durable structure, review loops, and legibility rather than a larger feature set |
 
 ## Issues Encountered
 | Issue | Resolution |
