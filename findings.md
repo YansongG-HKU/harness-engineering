@@ -45,6 +45,7 @@
 - Empty scaffold directories need placeholder files such as `.gitkeep`; otherwise a clean Git checkout would drop them and invalidate repository-shape tests.
 - The first canonical documentation layer is now implemented and anchored by explicit marker tests for concepts, workflows, tool contracts, prompt assets, evals, policy, examples, and vendor reference indexes.
 - The repository now has a first complete blueprint layer, giving each core harness object a minimal reusable template that skills and examples can point at.
+- The umbrella skill is now established as a routing layer back to canonical docs and focused module skills, preserving the rule that skills are entry points rather than the source of truth.
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -69,6 +70,7 @@
 | Preserve intentionally empty scaffold directories with `.gitkeep` files | Git does not track empty directories, but the repository contract and tests require them to exist |
 | Keep canonical docs intentionally concise in v1 | The repository is teaching-first, so each document should establish stable concepts without overloading the initial layer |
 | Keep blueprint templates skeletal but explicit | v1 should teach object boundaries and required fields without prematurely encoding heavyweight process |
+| Make the umbrella skill a router, not a duplicate spec | This keeps repository meaning centralized in docs and templates while still supporting `skill-installer` entry points |
 
 ## Issues Encountered
 | Issue | Resolution |

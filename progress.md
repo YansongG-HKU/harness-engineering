@@ -106,6 +106,12 @@
   - Ran the blueprint template test and observed the expected red state for missing template files
   - Added workflow, tool contract, prompt asset, eval, trace, and policy templates under `blueprints/`
   - Re-ran the blueprint template test and then ran the full suite for regression coverage
+  - Committed the blueprint template layer
+  - Wrote `tests/test_umbrella_skill.py` before adding the umbrella skill entry point
+  - Tightened the umbrella skill test so a missing file reports as an assertion failure rather than a file-read error
+  - Ran the umbrella skill test and observed the expected red state for the missing skill entry
+  - Added `skills/harness-engineering/SKILL.md` as the top-level routing skill
+  - Re-ran the umbrella skill test and then ran the full suite for regression coverage
 - Files created/modified:
   - `.gitignore` (created)
   - `.editorconfig` (created)
@@ -131,6 +137,8 @@
   - `blueprints/evals/eval-template.md` (created)
   - `blueprints/traces/trace-template.md` (created)
   - `blueprints/policies/policy-template.md` (created)
+  - `tests/test_umbrella_skill.py` (created)
+  - `skills/harness-engineering/SKILL.md` (created)
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -149,6 +157,9 @@
 | Blueprint templates red test | `python -m unittest discover -s tests -p "test_blueprint_templates.py" -v` before implementation | FAIL because template files are missing | 6 failures, 0 passes | PASS |
 | Blueprint templates green test | `python -m unittest discover -s tests -p "test_blueprint_templates.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
 | Regression suite after Task 3 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 5 tests passed | PASS |
+| Umbrella skill red test | `python -m unittest discover -s tests -p "test_umbrella_skill.py" -v` before implementation | FAIL because umbrella skill is missing | 2 failures, 0 passes | PASS |
+| Umbrella skill green test | `python -m unittest discover -s tests -p "test_umbrella_skill.py" -v` after implementation | PASS with `OK` | 2 tests passed | PASS |
+| Regression suite after Task 4 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 7 tests passed | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
