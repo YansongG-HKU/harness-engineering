@@ -117,6 +117,11 @@
   - Ran the module skill test and observed the expected red state for six missing module skill files
   - Added workflow, prompt asset, tool contract, eval, trace review, and repo legibility skills under `skills/`
   - Re-ran the module skill test and then ran the full suite for regression coverage
+  - Committed the focused module skill layer
+  - Wrote `tests/test_minimal_example.py` before adding any minimal example content
+  - Ran the minimal example test and observed the expected red state for missing example files
+  - Added the minimal example README plus workflow, prompt asset, tool contract, eval, trace, and policy example files
+  - Re-ran the minimal example test and then ran the full suite for regression coverage
 - Files created/modified:
   - `.gitignore` (created)
   - `.editorconfig` (created)
@@ -151,6 +156,14 @@
   - `skills/eval-design/SKILL.md` (created)
   - `skills/trace-review/SKILL.md` (created)
   - `skills/repo-legibility/SKILL.md` (created)
+  - `tests/test_minimal_example.py` (created)
+  - `examples/minimal/README.md` (created)
+  - `examples/minimal/workflow.md` (created)
+  - `examples/minimal/prompt-asset.md` (created)
+  - `examples/minimal/tool-contract.md` (created)
+  - `examples/minimal/eval.md` (created)
+  - `examples/minimal/trace.md` (created)
+  - `examples/minimal/policy.md` (created)
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -175,6 +188,9 @@
 | Module skills red test | `python -m unittest discover -s tests -p "test_module_skills.py" -v` before implementation | FAIL because focused module skills are missing | 6 failures, 0 passes | PASS |
 | Module skills green test | `python -m unittest discover -s tests -p "test_module_skills.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
 | Regression suite after Task 5 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 8 tests passed | PASS |
+| Minimal example red test | `python -m unittest discover -s tests -p "test_minimal_example.py" -v` before implementation | FAIL because minimal example files are missing | 7 failures, 0 passes | PASS |
+| Minimal example green test | `python -m unittest discover -s tests -p "test_minimal_example.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
+| Regression suite after Task 6 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 9 tests passed | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
