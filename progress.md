@@ -112,6 +112,11 @@
   - Ran the umbrella skill test and observed the expected red state for the missing skill entry
   - Added `skills/harness-engineering/SKILL.md` as the top-level routing skill
   - Re-ran the umbrella skill test and then ran the full suite for regression coverage
+  - Committed the umbrella skill entry point
+  - Wrote `tests/test_module_skills.py` before adding any focused module skills
+  - Ran the module skill test and observed the expected red state for six missing module skill files
+  - Added workflow, prompt asset, tool contract, eval, trace review, and repo legibility skills under `skills/`
+  - Re-ran the module skill test and then ran the full suite for regression coverage
 - Files created/modified:
   - `.gitignore` (created)
   - `.editorconfig` (created)
@@ -139,6 +144,13 @@
   - `blueprints/policies/policy-template.md` (created)
   - `tests/test_umbrella_skill.py` (created)
   - `skills/harness-engineering/SKILL.md` (created)
+  - `tests/test_module_skills.py` (created)
+  - `skills/workflow-design/SKILL.md` (created)
+  - `skills/prompt-assets/SKILL.md` (created)
+  - `skills/tool-contracts/SKILL.md` (created)
+  - `skills/eval-design/SKILL.md` (created)
+  - `skills/trace-review/SKILL.md` (created)
+  - `skills/repo-legibility/SKILL.md` (created)
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -160,6 +172,9 @@
 | Umbrella skill red test | `python -m unittest discover -s tests -p "test_umbrella_skill.py" -v` before implementation | FAIL because umbrella skill is missing | 2 failures, 0 passes | PASS |
 | Umbrella skill green test | `python -m unittest discover -s tests -p "test_umbrella_skill.py" -v` after implementation | PASS with `OK` | 2 tests passed | PASS |
 | Regression suite after Task 4 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 7 tests passed | PASS |
+| Module skills red test | `python -m unittest discover -s tests -p "test_module_skills.py" -v` before implementation | FAIL because focused module skills are missing | 6 failures, 0 passes | PASS |
+| Module skills green test | `python -m unittest discover -s tests -p "test_module_skills.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
+| Regression suite after Task 5 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 8 tests passed | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
