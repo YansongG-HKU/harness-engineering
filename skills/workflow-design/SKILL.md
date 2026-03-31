@@ -1,6 +1,6 @@
 ---
 name: workflow-design
-description: Guide users through workflow design using the repository's canonical workflow docs and template.
+description: Guide users through workflow design using packaged references and templates that mirror the repository's canonical workflow assets.
 ---
 
 # Workflow Design
@@ -8,7 +8,12 @@ description: Guide users through workflow design using the repository's canonica
 Use this skill when the task is about workflow shape, checkpoints, handoffs, or
 exit conditions.
 
-## Canonical References
+## Packaged References
 
-- `docs/workflows/overview.md`
-- `blueprints/workflows/workflow-template.md`
+- `references/workflow-overview.md`
+- `templates/workflow-template.md`
+
+## Canonical Source
+
+In the source repository, these packaged copies mirror
+docs/workflows/overview.md and blueprints/workflows/workflow-template.md.

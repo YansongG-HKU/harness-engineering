@@ -1,6 +1,6 @@
 ---
 name: tool-contracts
-description: Guide users through tool contract design using the repository's canonical tool docs and template.
+description: Guide users through tool contract design using packaged references and templates that mirror the repository's canonical tool assets.
 ---
 
 # Tool Contracts
@@ -8,7 +8,12 @@ description: Guide users through tool contract design using the repository's can
 Use this skill when the task is about agent-facing tool interfaces, approvals,
 or safety boundaries.
 
-## Canonical References
+## Packaged References
 
-- `docs/tools/tool-contracts.md`
-- `blueprints/tools/tool-contract-template.md`
+- `references/tool-contracts.md`
+- `templates/tool-contract-template.md`
+
+## Canonical Source
+
+In the source repository, these packaged copies mirror
+docs/tools/tool-contracts.md and blueprints/tools/tool-contract-template.md.

@@ -1,6 +1,6 @@
 ---
 name: harness-engineering
-description: Route users into the harness-engineering blueprint, canonical docs, examples, and module skills.
+description: Route users through a self-contained harness-engineering blueprint package that mirrors the repository's canonical docs and templates.
 ---
 
 # Harness Engineering
@@ -10,20 +10,29 @@ harness engineering.
 
 ## Read First
 
-- `docs/specs/2026-03-31-harness-blueprint-monorepo-design.md`
-- `docs/architecture/repository-map.md`
-- `docs/architecture/object-model.md`
+- `references/blueprint-overview.md`
+- `references/repository-map.md`
+- `references/object-model.md`
 
 ## Route by Task
 
-- For workflow structure questions, use `skills/workflow-design/SKILL.md`
-- For prompt asset design, use `skills/prompt-assets/SKILL.md`
-- For tool-facing interface design, use `skills/tool-contracts/SKILL.md`
-- For eval strategy, use `skills/eval-design/SKILL.md`
-- For trace interpretation, use `skills/trace-review/SKILL.md`
-- For repository readability and guardrails, use `skills/repo-legibility/SKILL.md`
+- For workflow structure questions, open `references/workflow-design.md` and `templates/workflow-template.md`
+- For prompt asset design, open `references/prompt-assets.md` and `templates/prompt-asset-template.md`
+- For tool-facing interface design, open `references/tool-contracts.md` and `templates/tool-contract-template.md`
+- For eval strategy, open `references/eval-design.md` and `templates/eval-template.md`
+- For trace interpretation, open `references/harness-loop.md` and `templates/trace-template.md`
+- For repository readability and guardrails, open `references/repository-map.md` and `references/repo-policy.md`
+
+## Focused Skill Names
+
+If you want narrower installs from the same repo, the focused skill names are
+workflow-design, prompt-assets, tool-contracts, eval-design, trace-review, and
+repo-legibility.
 
 ## Operating Rule
 
-This repository treats skills as entry points into canonical docs and blueprint
-assets, not as the primary source of truth.
+These packaged references exist so the skill remains usable after
+`skill-installer` copies only this directory. In the source repository,
+canonical meaning still lives under docs/ and blueprints/, especially
+docs/specs/2026-03-31-harness-blueprint-monorepo-design.md,
+docs/architecture/repository-map.md, and docs/architecture/object-model.md.

@@ -1,6 +1,6 @@
 ---
 name: eval-design
-description: Guide users through eval design using the repository's canonical eval docs and template.
+description: Guide users through eval design using packaged references and templates that mirror the repository's canonical eval assets.
 ---
 
 # Eval Design
@@ -8,7 +8,12 @@ description: Guide users through eval design using the repository's canonical ev
 Use this skill when the task is about success criteria, test cases, graders, or
 regression design.
 
-## Canonical References
+## Packaged References
 
-- `docs/evals/eval-design.md`
-- `blueprints/evals/eval-template.md`
+- `references/eval-design.md`
+- `templates/eval-template.md`
+
+## Canonical Source
+
+In the source repository, these packaged copies mirror
+docs/evals/eval-design.md and blueprints/evals/eval-template.md.
