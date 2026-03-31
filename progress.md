@@ -95,6 +95,12 @@
   - Created the root directory scaffold and added `.gitignore`, `.editorconfig`, `README.md`, and `AGENTS.md`
   - Added `.gitkeep` placeholders so intentionally empty scaffold directories survive normal Git checkout behavior
   - Re-ran the root scaffold test and got a clean pass
+  - Committed the initial repository bootstrap as the first repository commit
+  - Wrote `tests/test_canonical_docs.py` before adding any canonical concept or reference index content
+  - Ran the canonical docs test and observed the expected red state for missing docs and reference indexes
+  - Added the first canonical docs under `docs/concepts`, `docs/workflows`, `docs/tools`, `docs/prompts`, `docs/evals`, `docs/policies`, and `docs/examples`
+  - Added OpenAI and Anthropic reference index files under `references/`
+  - Re-ran the canonical docs test and then ran the full test suite for regression coverage
 - Files created/modified:
   - `.gitignore` (created)
   - `.editorconfig` (created)
@@ -102,6 +108,17 @@
   - `AGENTS.md` (created)
   - `tests/test_root_scaffold.py` (created)
   - scaffold `.gitkeep` files across empty repository directories (created)
+  - `tests/test_canonical_docs.py` (created)
+  - `docs/concepts/harness-engineering.md` (created)
+  - `docs/concepts/harness-loop.md` (created)
+  - `docs/workflows/overview.md` (created)
+  - `docs/tools/tool-contracts.md` (created)
+  - `docs/prompts/prompt-assets.md` (created)
+  - `docs/evals/eval-design.md` (created)
+  - `docs/policies/repo-policy.md` (created)
+  - `docs/examples/overview.md` (created)
+  - `references/openai/README.md` (created)
+  - `references/anthropic/README.md` (created)
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -114,6 +131,9 @@
 | Plan consistency check | Cross-read spec, repository map, and plan for `tools` paths | All canonical layers agree on tool-contract directories | PASS after inline spec correction |
 | Root scaffold red test | `python -m unittest discover -s tests -p "test_root_scaffold.py" -v` before implementation | FAIL because root files/directories are missing | 24 failures, 0 passes | PASS |
 | Root scaffold green test | `python -m unittest discover -s tests -p "test_root_scaffold.py" -v` after implementation | PASS with `OK` | 3 tests passed | PASS |
+| Canonical docs red test | `python -m unittest discover -s tests -p "test_canonical_docs.py" -v` before implementation | FAIL because canonical docs are missing | 10 failures, 0 passes | PASS |
+| Canonical docs green test | `python -m unittest discover -s tests -p "test_canonical_docs.py" -v` after implementation | PASS with `OK` | 1 test passed | PASS |
+| Regression suite after Task 2 | `python -m unittest discover -s tests -v` | PASS with all known tests green | 4 tests passed | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
